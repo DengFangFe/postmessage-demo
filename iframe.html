@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>iframe</title>
+    <script type="text/JavaScript">
+      function sendIt() { // 子页面给父页面传输信息 
+        	parent.postMessage( document.getElementById("message").value, "*" ); 
+      }
+      function closeBtn(){
+      	parent.postMessage('close','*');
+      }
+    </script>
+</head>
+
+<body>
+    <br/> this is the port for cuixiaozhuai
+    <a href="javascript:;" id="closeBtn" onclick="closeBtn()">关闭</a>
+    <input type="text" id="message" />
+    <input type="button" value="Send to child.com" onclick="sendIt()" />
+</body>
+
+</html>
